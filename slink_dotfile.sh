@@ -13,13 +13,13 @@ dir=~/.dotfiles/dotfiles
 olddir=~/.dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="zshrc Xmodmap pam_environment gitconfig config/i3 config/i3status config/ranger config/mimeapps.list"
+files="zshrc Xmodmap pam_environment gitconfig config/i3 config/i3status config/ranger config/alacritty config/mimeapps.list"
 
 ##########
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
+mkdir -p $olddir/config
 echo "done"
 
 # change to the dotfiles directory
