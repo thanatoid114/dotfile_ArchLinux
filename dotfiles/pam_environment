@@ -1,0 +1,11 @@
+# Qt5
+QT_QPA_PLATFORMTHEME=qt5ct
+# Input Method
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODFIERS=@im=fcitx
+# GNUPG
+GNUPGHOME=/home/msun/.config/gnupg
+# Utillity
+EDITOR=/usr/bin/vim
+TERMINAL=st

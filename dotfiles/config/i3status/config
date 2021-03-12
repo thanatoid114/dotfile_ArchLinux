@@ -1,0 +1,31 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+
+order += "load"
+order += "memory"
+order += "cpu_usage"
+order += "tztime local"
+
+
+load {
+        format = "Load: %1min"
+}
+
+tztime local {
+        format = "%Y-%m-%d %a %H:%M:%S"
+}
+
+cpu_usage {
+    format = "CPU %usage [{%cpu0 %cpu1 %cpu2 %cpu3}]"
+}
+
+
+memory {
+        format = "Mem:%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
