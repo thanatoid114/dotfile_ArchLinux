@@ -102,6 +102,7 @@ alias pcs="pass -c"
 #alias maxwell="ssh -XY -p 4022 sunmeng@maxwell.ibs.re.kr"
 alias maxwell="ssh  -p 4022 sunmeng@maxwell.ibs.re.kr"
 alias fermi="ssh -p 4022 sunmeng@fermi.ibs.re.kr"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Environment variable
 #export GNUPGHOME=$HOME/.config/gnupg
