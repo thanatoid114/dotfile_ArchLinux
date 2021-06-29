@@ -1,2 +1,2 @@
 # dotfile_ArchLinux
-Configuration file for Archlinux
+Configuration file for  my Archlinux

@@ -3,14 +3,15 @@
 1. networkmanager;nm-applet and editor
 2. xorg-server;~~xf86_video-~~*; xorg-xwininfo
 3. i3-wm; 
+4. qtile
 5. lightDM;[lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter)
 6. rofi
 7. ~~CLI xbacklight~~
 8. pavucontrol; CLI pulsemixer
 9. pacmanfm; gvfs for trash support
-11. maim: Copy desktop 
-10. ~~copyq~~
-11. picom
+10. maim: Copy desktop 
+11. ~~copyq~~
+12. picom
 
 ### Internet
 
@@ -43,7 +44,7 @@
 7. xarchiver (p7zip,unrar)
 8. **File Serching**?
 9. git
-10. zeal 
+10. zeal ?
 11. **Back up tools**?
 12. conky
 13. neofetch
@@ -214,3 +215,4 @@ pacman -S fcitx-qt5
 
 	Problem is screen will black in Zoom
 
+k

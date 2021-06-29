@@ -13,7 +13,7 @@ dir=~/.dotfiles/dotfiles
 olddir=~/.dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="zshrc Xmodmap pam_environment gitconfig config/i3 config/i3status config/ranger config/alacritty config/mimeapps.list"
+files="zshrc Xmodmap pam_environment gitconfig config/i3 config/i3status config/ranger config/alacritty config/mimeapps.list config/qtile"
 
 ##########
 
