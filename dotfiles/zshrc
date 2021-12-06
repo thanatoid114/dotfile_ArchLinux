@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/Bin/bin:$PATH
+export PATH=$HOME/Bin/bin:$HOME/.emacs.d/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/msun/.oh-my-zsh"
@@ -9,7 +9,7 @@ export ZSH="/home/msun/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="candy"
-ZSH_THEME="avit"
+ZSH_THEME="candy"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -69,7 +69,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-dircolors-nord)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pcs="pass -c"
 alias maxwell="ssh -XY -p 4022 sunmeng@maxwell.ibs.re.kr"
-#alias maxwell="ssh  -p 4022 sunmeng@maxwell.ibs.re.kr"
+alias tmaxwell="ssh  -p 4022 sunmeng@maxwell.ibs.re.kr"
 alias fermi="ssh -p 4022 sunmeng@fermi.ibs.re.kr"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 

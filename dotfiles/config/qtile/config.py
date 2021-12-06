@@ -44,12 +44,16 @@ terminal = "alacritty"
 colors = ["#1c2b2d",
           "#1f6f8b",
           "#99a8b2",
-          "e6d5b8"]
+          "#e6d5b8",
+          "#464F41",
+          "#5B8A72",
+          "#56776C",
+          ]
 
 # Layout theme
 layout_theme = {
         "border_width": 12,
-        "border_focus": colors[1],
+        "border_focus": colors[2],
         "border_normal": colors[0],
         }
 
@@ -76,12 +80,16 @@ keys = [
     # will be to screen edge - window would shrink.
     KeyChord(
         [mod], "r", [
-            Key([], "j", lazy.layout.shrink(),
-                desc="Reduce window size dwon"),
-            Key([], "k", lazy.layout.grow(),
-                desc="Grow window size up"),
+            Key([], "j", lazy.layout.grow_down(),
+                desc="Move the edge dwon"),
+            Key([], "k", lazy.layout.grow_up(),
+                desc="Move the edge up"),
+            Key([], "h", lazy.layout.grow_left(),
+                desc="Move the edge to the left"),
+            Key([], "l", lazy.layout.grow_right(),
+                desc="Move the edge to the right"),
             Key([], "n", lazy.layout.normalize(),
-                desc="Reset all window sizes"),
+                desc="Normalize the size"),
             ],
         mode="Resize"
         ),
@@ -94,8 +102,6 @@ keys = [
         desc="Toggle between split and unsplit sides of stack"),
     Key([mod, "shift"], "space", lazy.window.toggle_floating(),
         desc="Toggle the current window to/from floating mode"),
-    Key([mod], "f", lazy.window.toggle_maximize(),
-        desc="Toggle the current window to/from fullscreen mode"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
@@ -127,25 +133,26 @@ for i in groups:
 
 
 layouts = [
-    # layout.Columns(
-    #     **layout_theme,
-    #     grow_amount=5,
-    #     insert_position=1,
-    #     border_normal_stack=colors[2],
-    #     border_focus_stack=colors[1],
-    #     ),
+    layout.Columns(
+         **layout_theme,
+         grow_amount=5,
+         insert_position=1,
+         border_normal_stack=colors[4],
+         border_focus_stack=colors[5],
+         num_columns=2,
+         ),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    layout.MonadTall(
-        **layout_theme,
-        ),
+    # layout.MonadTall(
+    #   **layout_theme,
+    #   ),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
-    layout.TreeTab(),
-    layout.Max(),
+    # layout.TreeTab(),
+    layout.Max(**layout_theme),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]

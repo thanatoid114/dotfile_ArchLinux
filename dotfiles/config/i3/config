@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 16
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,14 +37,14 @@ floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 #alacritty
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+space exec dmenu_run -h 32 -l 8 -g 12 -bw 0 -c -1 -fn 'DejaVu Sans Mono-16'
+# bindsym $mod+space exec --no-startup-id dmenu_run -h 32 -l 8 -g 12 -bw 0 -c -1 -fn 'DejaVu Sans Mono-16'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -60,11 +60,6 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -72,11 +67,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym mod1+h split h
@@ -154,15 +144,9 @@ mode "resize" {
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
     bindsym h resize shrink width 2 px or 2 ppt
-        bindsym j resize grow height 2 px or 2 ppt
-        bindsym k resize shrink height 2 px or 2 ppt
-        bindsym l resize grow width 2 px or 2 ppt
-
-# same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    bindsym j resize grow height 2 px or 2 ppt
+    bindsym k resize shrink height 2 px or 2 ppt
+    bindsym l resize grow width 2 px or 2 ppt
 
 # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -172,19 +156,27 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Class Scheme: Nord
+client.focused           #D08770 #D08770 #434C5E #A3BE8C
+client.focused_inactive  #88C0D0 #4C566A #4C566A #4C566A
+client.unfocused         #88C0D0 #4C566A #4C566A #4C566A
+client.urgent            #BF616A #BF616A #2E3440 #A3BE8C
+
+#client.placeholder
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     position top
         status_command i3status
         colors {
-            background #202020
-                separator #285577
-                statusline #ffffff
-                focused_workspace  #AAAAAA #000000 #DDDDDD
-                active_workspace   #000000 #808080 #336633
-                inactive_workspace #606060 #808080 #000000
-                urgent_workspace   #AAAAAA #e60000 #ffffff
+            background #2E3440
+            separator  #ECEFF4
+            statusline #ECEFF4
+            focused_workspace  #5E81AC #5E81AC #ECEFF4
+            active_workspace   #5E81AC #5E81AC #ECEFF4
+            urgent_workspace   #BF616A #BF616A #2E3440
         }
 }
 
@@ -193,27 +185,25 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx -d
 exec --no-startup-id dunst &
-#exec --no-startup-id conky -d -c ~/.config/i3/i3-config/conky-right
-#exec --no-startup-id conky -d -c ~/.config/i3/i3-config/conky-left
-#exec --no-startup-id ~/.config/i3/bin/bar
+
 # Screenshot
 # Full Screen
-bindsym  Print exec "maim ~/Pictures/$(date +%s).png"
+bindsym  Print exec --no-startup-id "maim ~/Pictures/$(date +%s).png"
 # Window
-bindsym shift + Print exec "maim -i $(xdotool getactivewindow) ~/Pictures/window_$(date +%s).png"
+bindsym shift + Print exec --no-startup-id "maim -i $(xdotool getactivewindow) ~/Pictures/window_$(date +%s).png"
 # Region
-bindsym ctrl + Print exec "maim -s ~/Pictures/window_$(date +%s).png | xclip -selection clipboard -t image/png -i"
+bindsym ctrl + Print exec --no-startup-id "maim -s ~/Pictures/window_$(date +%s).png | xclip -selection clipboard -t image/png -i"
 
 
 # Volume
-bindsym XF86AudioRaiseVolume exec "pulsemixer --change-volume +5"
-bindsym XF86AudioLowerVolume exec "pulsemixer --change-volume -5"
-bindsym XF86AudioMute exec "pulsemixer --toggle-mute"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pulsemixer --change-volume +5"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pulsemixer --change-volume -5"
+bindsym XF86AudioMute exec --no-startup-id "pulsemixer --toggle-mute"
 
 # Media Controls
-bindsym XF86AudioPlay exec "mpc toggle"
-bindsym XF86AudioNext exec "mpc next"
-bindsym XF86AudioPrev exec "mpc prev"
+bindsym XF86AudioPlay exec --no-startup-id "mpc toggle"
+bindsym XF86AudioNext exec --no-startup-id "mpc next"
+bindsym XF86AudioPrev exec --no-startup-id "mpc prev"
 
 
 # Window Behaviour
@@ -224,20 +214,10 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Engrampa"] floating enable
 for_window [class="Stardict"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-
-# Use pactl to adjust volume in PulseAudio.
-#set $refresh_i3status killall -SIGUSR1 i3status
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+for_window [class="Display"] floating enable
+for_window [class="kruler"] floating enable
 
 
 # Configure for border
 hide_edge_borders none
-default_border pixel 10
-
+default_border pixel 12
