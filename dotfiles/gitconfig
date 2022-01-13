@@ -1,5 +1,9 @@
 [user]
-	email = sunmeg.89@gmail.com
-	name = Meng Sun
+	email = msun_89@bjut.edu.cn
+	name = msun89
 [pull]
 	rebase = false
+[https]
+	proxy = socks5://127.0.0.1:1080
+[url "https://github.com.cnpmjs.org/"]
+	insteadof = https://github.com/
