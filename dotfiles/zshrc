@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pcs="pass -c"
-alias maxwell="ssh -XY -p 4022 sunmeng@maxwell.ibs.re.kr"
+alias maxwell="ssh -XCY -p 4022 sunmeng@maxwell.ibs.re.kr"
 alias tmaxwell="ssh  -p 4022 sunmeng@maxwell.ibs.re.kr"
 alias fermi="ssh -p 4022 sunmeng@fermi.ibs.re.kr"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

@@ -215,4 +215,26 @@ pacman -S fcitx-qt5
 
 	Problem is screen will black in Zoom
 
-k
+
+
+
+
+## Debian
+
+```bash
+apt install i3
+apt install xinit
+apt install vim
+apt install sudo
+apt install xorg
+```
+
+
+
+### Language
+
+```bash
+env | grep LANG
+export LANG=en_US.UTF-8
+```
+
